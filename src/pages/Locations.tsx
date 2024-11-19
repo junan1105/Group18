@@ -1,6 +1,58 @@
 import React, { useState } from 'react';
 
 const Locations: React.FC = () => {
+  // 地點資料陣列
+  const locations = [
+    {
+      key: 'napoli',
+      name: '拿坡里炸雞 / 三商炸雞（農安店）',
+      address: '104029台北市中山區農安街13號',
+      link: 'https://maps.app.goo.gl/qWJixKcRcXRW7Fke6',
+    },
+    {
+      key: 'mitsui',
+      name: 'MITSUI OUTLET PARK 林口',
+      address: '244新北市林口區文化三路一段356號',
+      link: 'https://maps.app.goo.gl/Fxu8qs2UQXFCzkieA',
+    },
+    {
+      key: 'chayao',
+      name: '柴窯火腿製造所 三明治專賣店（大巨蛋店）',
+      address: '110台北市信義區忠孝東路四段515號B2',
+      link: 'https://maps.app.goo.gl/ys5E8BdwFe3VT9hP6',
+    },
+    {
+      key: 'cozy',
+      name: '御私藏 Cozy Tea Loft 大巨蛋門市',
+      address: '110台北市信義區忠孝東路四段515號',
+      link: 'https://maps.app.goo.gl/7Czi3ZFfjeFoGxMRA',
+    },
+    {
+      key: 'viet',
+      name: '越共咖啡',
+      address: '100台北市中正區開封街一段16號',
+      link: 'https://maps.app.goo.gl/Hw9gqEB6Upm4f92g7',
+    },
+    {
+      key: 'xiaowang',
+      name: '小王煮瓜',
+      address: '108台北市萬華區華西街17之4號攤位153號',
+      link: 'https://maps.app.goo.gl/mD3jtnZTG9vW1xyPA',
+    },
+    {
+      key: 'yuanfang',
+      name: '源芳刈包',
+      address: '108台北市萬華區華西街17-2號',
+      link: 'https://maps.app.goo.gl/UtwHCDobdDPqijM79',
+    },
+    {
+      key: 'xiaopin',
+      name: '小品雅廚',
+      address: '104台北市中山區中原街130號',
+      link: 'https://maps.app.goo.gl/5i329C9voHE6PBRA9',
+    },
+  ];
+
   // 用來控制每個地點的顯示狀態
   const [visibleLocation, setVisibleLocation] = useState<string | null>(null);
 
@@ -13,78 +65,25 @@ const Locations: React.FC = () => {
     <div className="locations">
       <h2>熱銷地點</h2>
       <ul>
-        <li>
-          <button onClick={() => toggleLocation('napoli')}>切換 拿坡里炸雞 / 三商炸雞（農安店）</button>
-          {visibleLocation === 'napoli' && (
-            <div>
-              <p>地址：104029台北市中山區農安街13號</p>
-              <a href="https://maps.app.goo.gl/qWJixKcRcXRW7Fke6" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('mitsui')}>切換 MITSUI OUTLET PARK 林口</button>
-          {visibleLocation === 'mitsui' && (
-            <div>
-              <p>地址：244新北市林口區文化三路一段356號</p>
-              <a href="https://maps.app.goo.gl/Fxu8qs2UQXFCzkieA" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('chayao')}>切換 柴窯火腿製造所 三明治專賣店（大巨蛋店）</button>
-          {visibleLocation === 'chayao' && (
-            <div>
-              <p>地址：110台北市信義區忠孝東路四段515號B2</p>
-              <a href="https://maps.app.goo.gl/ys5E8BdwFe3VT9hP6" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('cozy')}>切換 御私藏 Cozy Tea Loft 大巨蛋門市</button>
-          {visibleLocation === 'cozy' && (
-            <div>
-              <p>地址：110台北市信義區忠孝東路四段515號</p>
-              <a href="https://maps.app.goo.gl/7Czi3ZFfjeFoGxMRA" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('cozy')}>切換 越共咖啡</button>
-          {visibleLocation === 'cozy' && (
-            <div>
-              <p>地址：100台北市中正區開封街一段16號</p>
-              <a href="https://maps.app.goo.gl/Hw9gqEB6Upm4f92g7" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('cozy')}>切換 小王煮瓜</button>
-          {visibleLocation === 'cozy' && (
-            <div>
-              <p>地址：108台北市萬華區華西街17之4號攤位153號</p>
-              <a href="https://maps.app.goo.gl/mD3jtnZTG9vW1xyPA" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('cozy')}>切換 源芳刈包</button>
-          {visibleLocation === 'cozy' && (
-            <div>
-              <p>地址： 108台北市萬華區華西街17-2號</p>
-              <a href="https://maps.app.goo.gl/UtwHCDobdDPqijM79" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
-        <li>
-          <button onClick={() => toggleLocation('cozy')}>切換 小品雅廚</button>
-          {visibleLocation === 'cozy' && (
-            <div>
-              <p>地址：104台北市中山區中原街130號</p>
-              <a href="https://maps.app.goo.gl/5i329C9voHE6PBRA9" target="_blank" rel="noopener noreferrer">Google Maps 來源</a>
-            </div>
-          )}
-        </li>
+        {locations.map((location) => (
+          <li key={location.key}>
+            <button onClick={() => toggleLocation(location.key)}>
+              切換 {location.name}
+            </button>
+            {visibleLocation === location.key && (
+              <div>
+                <p>地址：{location.address}</p>
+                <a
+                  href={location.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Google Maps 來源
+                </a>
+              </div>
+            )}
+          </li>
+        ))}
       </ul>
     </div>
   );

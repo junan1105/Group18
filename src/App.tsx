@@ -11,13 +11,16 @@ const App: React.FC = () => {
   return (
     <Router>
       <div>
+        {/* Main wrapper for semantic structure */}
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/trending" element={<Trending />} />
-          <Route path="/reviews" element={<Reviews />} />
-          <Route path="/locations" element={<Locations />} />
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/trending" element={<Trending />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/locations" element={<Locations />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
